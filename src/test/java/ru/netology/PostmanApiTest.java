@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
 
 class PostmanApiTest {
     @Test
@@ -19,7 +20,7 @@ class PostmanApiTest {
                 .post("/post")
                 .then()
                 .statusCode(200)
-                .body("data", equalTo("some value"))
+                .body("data", equalTo("some data"))
         ;
     }
 }
